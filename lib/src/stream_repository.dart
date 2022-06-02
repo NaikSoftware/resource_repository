@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2022 Score Counter
- * 2020-2021 NaikSoftware, drstranges, MagTuxGit
+ * Copyright (c) Resource Repository
+ * 2020-2022 drstranges, NaikSoftware, MagTuxGit
  */
 
 import 'dart:async';
@@ -20,6 +20,7 @@ typedef FetchData<K, V> = Future<V> Function(
   ResourceFetchArguments? arguments,
 );
 
+/// Repository for resource management.
 class StreamRepository<K, V> {
   final Map<K, StreamResource<K, V>> _resources = {};
   final FetchData<K, V>? fetch;
@@ -58,7 +59,7 @@ class StreamRepository<K, V> {
           cacheDuration: Duration.zero,
         );
 
-  /// Creates a stream by [key]. It fetches the cached data,
+  /// Creates a stream by [key]. It emits the cached data,
   /// then the [fetch] result if provided, and after that any changes to the resource
   /// due to reloading or invalidating the resource.
   Stream<Resource<V>> stream(

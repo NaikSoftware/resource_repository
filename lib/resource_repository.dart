@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Resource Repository
+ * 2020-2022 drstranges, NaikSoftware, MagTuxGit
+ */
 library resource_repository;
 
 export 'src/resource.dart';

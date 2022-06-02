@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2022 Score Counter
- * 2020-2021 NaikSoftware, drstranges, MagTuxGit
+ * Copyright (c) Resource Repository
+ * 2020-2022 drstranges, NaikSoftware, MagTuxGit
  */
 
 import 'package:resource_repository_storage/resource_repository_storage.dart';
@@ -56,6 +56,7 @@ class SimpleMemoryCacheStorage<K, V> implements CacheStorage<K, V> {
     (await _ensureBox()).remove(cacheKey);
   }
 
+  /// Not implemented yet
   @override
   Stream<List<V>> watch() =>
       throw UnsupportedError('Not supported yet for MemoryCacheStorage!');

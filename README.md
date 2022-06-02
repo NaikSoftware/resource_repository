@@ -7,7 +7,7 @@ Implementation of a resource/repository pattern for data management in Flutter a
 ## Getting started
 
 1. Add dependency `flutter pub add resource_repository`
-2. Package uses `MemoryCacheStorage` by default. You can add others:
+2. Package uses `SimpleMemoryCacheStorage` by default. You can add others:
     1. Hive [resource_repository_hive_storage](https://pub.dev/packages/resource_repository_hive_storage). Recommended for small data.
     2. ObjectBox [resource_repository_objectbox_storage](https://pub.dev/packages/resource_repository_objectbox_storage). More efficient on big datasets.
 
@@ -26,7 +26,7 @@ final remoteRepository = StreamRepository.remote({
    CacheDurationResolver<K, V>? cacheDurationResolver,
 });
 ```
-And then you can subscribe to resource, watch all resources or use other functionality of repository.
+And then you can subscribe to the resource, watch all resources or use other functionality of repository.
 ```dart
 final repository = StreamRepository<String, FooBar>.remote(
   fetch: (key, arguments) => apiCall(fooBarId: key),
@@ -46,3 +46,9 @@ repository.invalidate('1234'); // reload
 ## Additional information
 
 If you've created a new implementation of CacheStorage, please let me know on the project's github page. I'll add it to the readme.
+
+### Authors
+
+- [drstranges](https://github.com/drstranges)
+- [NaikSoftware](https://github.com/NaikSoftware)
+- [MagTuxGit](https://github.com/MagTuxGit)
