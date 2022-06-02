@@ -17,7 +17,7 @@ for example instead of shared_preferences when you need more than just a small k
 The remote should provide a `FetchData` callback to load data from an external place, e.g. REST API call.
 ```dart
 final localRepository = StreamRepository.local({
-    CacheStorage<K, V>? storage, // pass any of implementations of CacheStorage
+    CacheStorage<K, V>? storage, // pass any of the implementations of CacheStorage
   });
 final remoteRepository = StreamRepository.remote({
    required FetchData<K, V> fetch,
@@ -26,7 +26,7 @@ final remoteRepository = StreamRepository.remote({
    CacheDurationResolver<K, V>? cacheDurationResolver,
 });
 ```
-And then you can subscribe to `load` resource, watch all resources or use other functionality of repository.
+And then you can subscribe to resource, watch all resources or use other functionality of repository.
 ```dart
 final repository = StreamRepository<String, FooBar>.remote(
   fetch: (key, arguments) => apiCall(fooBarId: key),
