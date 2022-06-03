@@ -8,8 +8,8 @@ Implementation of a resource/repository pattern for data management in Flutter a
 
 1. Add dependency `flutter pub add resource_repository`
 2. Package uses `SimpleMemoryCacheStorage` by default. You can add others:
-    1. Hive [resource_repository_hive_storage](https://pub.dev/packages/resource_repository_hive_storage). Recommended for small data.
-    2. ObjectBox [resource_repository_objectbox_storage](https://pub.dev/packages/resource_repository_objectbox_storage). More efficient on big datasets.
+    1. Hive [resource_repository_hive](https://pub.dev/packages/resource_repository_hive). Recommended for small data.
+    2. ObjectBox [resource_repository_objectbox](https://pub.dev/packages/resource_repository_objectbox). More efficient on big datasets.
 
 ## Usage
 The repository can be "remote" or "local". Local should be used to manage data locally,
