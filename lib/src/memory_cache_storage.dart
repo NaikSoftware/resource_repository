@@ -11,7 +11,8 @@ import 'package:synchronized/synchronized.dart';
 /// It just keeps the data in memory.
 class MemoryCacheStorage<K, V> implements CacheStorage<K, V> {
   static final _lock = Lock();
-  static final Map<String, BehaviorSubject<Map>> _boxes = {};
+  static final Map<String, BehaviorSubject<Map<dynamic, CacheEntry<dynamic>>>>
+      _boxes = {};
 
   final String _boxKey;
 
@@ -28,12 +29,12 @@ class MemoryCacheStorage<K, V> implements CacheStorage<K, V> {
 
   Future<BehaviorSubject<Map<K, CacheEntry<V>>>> _ensureBox() =>
       _lock.synchronized(() async {
-        BehaviorSubject<Map>? box = _boxes[_boxKey];
+        var box = _boxes[_boxKey] as BehaviorSubject<Map<K, CacheEntry<V>>>?;
         if (box == null) {
           box = BehaviorSubject.seeded(<K, CacheEntry<V>>{});
           _boxes[_boxKey] = box;
         }
-        return box as BehaviorSubject<Map<K, CacheEntry<V>>>;
+        return box;
       });
 
   @override

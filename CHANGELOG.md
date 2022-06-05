@@ -1,3 +1,6 @@
+## 0.0.4
+* Fixed MemoryCacheStorage and tests
+
 ## 0.0.3
 * SimpleMemoryCacheStorage renamed to MemoryCacheStorage
 * Implemented `watch()` for MemoryCacheStorage
