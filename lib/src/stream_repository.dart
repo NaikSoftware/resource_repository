@@ -46,7 +46,7 @@ class StreamRepository<K, V> {
     CacheDurationResolver<K, V>? cacheDurationResolver,
   }) : this._(
           fetch: fetch,
-          storage: storage ?? SimpleMemoryCacheStorage<K, V>(const Uuid().v4()),
+          storage: storage ?? MemoryCacheStorage<K, V>(const Uuid().v4()),
           cacheDuration: cacheDuration,
           cacheDurationResolver: cacheDurationResolver,
         );

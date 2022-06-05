@@ -31,7 +31,7 @@ And then you can subscribe to the resource, watch all resources or use other fun
 final repository = StreamRepository<String, FooBar>.remote(
   fetch: (key, arguments) => apiCall(fooBarId: key),
   cacheDuration: const Duration(minutes: 30),
-  storage: SimpleMemoryCacheStorage('foobar_storage_key'),
+  storage: MemoryCacheStorage('foobar_storage_key'),
 );
 
 repository.stream('1234').listen((fooBar) {

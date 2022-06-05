@@ -1,6 +1,6 @@
 name: resource_repository
 description: Implementation of a resource/repository pattern for data management in Flutter apps.
-version: 0.0.2+2
+version: 0.0.3
 homepage: https://github.com/NaikSoftware/resource_repository
 
 environment:
